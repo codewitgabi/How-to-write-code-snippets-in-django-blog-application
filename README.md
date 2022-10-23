@@ -39,3 +39,19 @@ Defining url links, use [] to wrap the text to be show as the link and () to wra
 
 This is the link to [my github](https://github.com/codewitgabi)
 
+## Images
+This section shows a python while loop in code and also an image
+
+```
+#using if/else in python
+a = 1
+while a < 10:
+	print('Printing', a)
+	a = a + 1
+	if a == 4:
+		break
+	print("Loop terminated")
+```
+
+![code image](https://www.google.com/search?q=python+for+loop&client=ms-opera-mini-android&channel=new&sxsrf=ALiCzsZtlrVUDo_C-zuJgMYkL43-oLB_Pw:1666564217990&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi9odXBs_f6AhXXwAIHHbu_AToQ_AUIBigB&biw=377&bih=565#)
+
