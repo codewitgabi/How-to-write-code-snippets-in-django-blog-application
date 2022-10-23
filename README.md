@@ -33,3 +33,9 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+
+## Links
+Defining url links, use [] to wrap the text to be show as the link and () to wrap the url.
+
+This is the link to [my github](https://github.com/codewitgabi)
+
