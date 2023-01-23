@@ -12,10 +12,10 @@ For every django project, any third party package should be added to `INSTALLED_
 
 ```
 INSTALLED_APPS = [
-	#...
-	"ckeditor",
-	"ckeditor_uploader",  
-	#...
+    #...
+    "ckeditor",
+    "ckeditor_uploader",  
+    #...
 ]
 ```
 
@@ -26,15 +26,15 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # for responsive & code snippet
 CKEDITOR_CONFIGS = {
-	"default": {
-		"toolbar": None,
-		"width": "100%",
-		"extraPlugins": ",".join(
-			[
-				"codesnippet",
-			]
-		),
-	},
+    "default": {
+        "toolbar": None,
+        "width": "100%",
+        "extraPlugins": ",".join(
+            [
+                "codesnippet",
+            ]
+        ),
+    },
 }
 ```
 
@@ -46,9 +46,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-	path("admin/", admin.site.urls),
-	path("", include("blog_app.urls")),
-	path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("admin/", admin.site.urls),
+    path("", include("blog_app.urls")),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
@@ -59,8 +59,8 @@ Here, we are going to add the field to be used for writing our post either on th
 from ckeditor_uploader.fields import RichTextUploadingField
 
 class Blog(models.Model):
-	# other fields
-	content = RichTextUploadingField(null=True, blank=True)
+    # other fields
+    content = RichTextUploadingField(null=True, blank=True)
 ```
 
 ## Making Migrations
@@ -84,18 +84,18 @@ This should be done in your base.html file or the file you will be writing the p
     <title>CKEditor</title>
 </head>
 <body>
-	{% block forms %}
+    {% block forms %}
       
-	{% endblock forms %}
-	{% block content %}
+    {% endblock forms %}
+    {% block content %}
       
-	{% endblock content %}
-	{% block ckeditor %}
+    {% endblock content %}
+    {% block ckeditor %}
 
-	<link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css' %}" />
-	<script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css' %}" />
+    <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
 
-	<script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 	{% endblock ckeditor %}
 </body>
